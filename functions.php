@@ -3,6 +3,12 @@
 function init_template(){
   add_theme_support('post_thumbnails');
   add_theme_support('title-tag');
+
+  register_nav_menus(
+    array(
+      'top_menu' => 'Main Menu'
+    )
+  );
 }
 
 // After init page init template
@@ -34,7 +40,7 @@ add_action('wp_enqueue_scripts','assets');
 //  wp_enqueue_style( 'estilos-padre', //handle para estilos de tema padre
 //                     get_template_directory_uri() . '/style.css' //get_template_directory_uri() retornara la ubicación del tema padre
 //                 );
-// 
+//
 //  wp_enqueue_style( 'estilos-hijos',
 //                     get_stylesheet_directory_uri() . '/style.css', //get_stylesheet_directory_uri() retornara la ubicación de la hoja de estilos del child-theme
 //                     array('estilos-padre'), //usa como depencia la hoja de estilos del tema padre.
@@ -42,3 +48,21 @@ add_action('wp_enqueue_scripts','assets');
 //                     );
 // }
 // add_action( 'wp_enqueue_scripts', 'child_theme_assets' );
+
+
+function sidebar(){
+    register_sidebar(
+        array(
+            'name' => 'Pie de pagina',
+            'id' => 'footer',
+            'description' => 'Zona de Widgets para pie de pagina',
+            'before_title' => '<p>',
+            'after_title' => '</p>',
+            'before_widget' => '<div id="%1$s" class= "%2$s">',
+            'after_widget'  => '</div>',
+        )
+        );
+
+}
+
+add_action('widgets_init', 'sidebar');
