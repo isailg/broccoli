@@ -4,8 +4,13 @@
     <?php if(have_posts()){
             while(have_posts()){
                 the_post(); ?>
-            <h1 class='my-3'><?php the_title(); ?>!!</h1>
-            <?php the_content(); ?>
+            <h1 class='my-3'><?php //the_title(); ?></h1>
+            <div class="row">
+              <div class="col-12">
+                <?php //the_content(); ?>
+                <img src="<?php echo get_template_directory_uri()?>/assets/images/Assorted-Fruits.jpg" class="figure-img img-fluid rounded" alt="Responsive image">
+              </div>
+            </div>
 
         <?php    }
     }?>
@@ -16,7 +21,7 @@
         <?php
         $args = array(
             'post_type' => 'producto',
-            'post_per_page' => -1,
+            'post_per_page' => -1, //All products
             'order'         => 'ASC',
             'orderby'       => 'title'
         );

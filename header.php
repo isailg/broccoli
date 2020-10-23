@@ -11,7 +11,8 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-4">
-                <img src="<?php echo get_template_directory_uri()?>/assets/images/lgo.jpeg" alt="logo">
+                <!-- <img src="<?php echo get_template_directory_uri()?>/assets/images/lgo.jpeg" alt="logo"> -->
+                <h1>Top-Commerce</h1>
             </div>
             <div class="col-8">
                 <nav>
